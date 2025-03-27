@@ -6,4 +6,134 @@ body {
   );
 }
 h1 {
+  color: blue;
+}
+
+.stack {
+  position: relative;
+  top: 150px;
+  left: 150px;
+  width: 300px;
+  height: 300px;
+  transition: all ease-in-out 0.5s;
+}
+.stack img {
+  position: absolute;
+  max-width: 300px;
+  max-height: 300px;
+  border: solid 15px #eaeaea;
+  border-bottom: solid 90px #eaeaea;
+}
+
+.cover {
+  border: solid 15px #eaeaea;
+  border-bottom: solid 90px #eaeaea;
+  transition: all ease-in-out 0.5s;
+}
+.no-show {
+  display: none;
+}
+.under1 {
+  transform: rotate(-10deg);
+  transition: all ease-in-out 0.5s;
+}
+
+.under2 {
+  transform: rotate(10deg);
+  transition: all ease-in-out 0.5s;
+}
+.stack:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  transition: all ease-in-out 0.5s;
+}
+
+.stack:hover .under1 {
+  transform: rotate(-15deg);
+  transition: all ease-in-out 0.5s;
+  /* add shadows? */
+}
+
+.stack:hover .under2 {
+  transform: rotate(15deg);
+  transition: all ease-in-out 0.5s;
+}
+
+/* The Modal (background) */
+.gallery {
+  display: none; /* Keep it hidden initially */
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.279);
+  transform: translate(-50%, -50%); /* Centering fix */
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+.gallery-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  position: fixed; /* Ensures it stays in place */
+  top: 0;
+  left: 0;
+}
+/* Modal Content */
+.gallery-content img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 95%;
+  max-height: 95vh;
+  /* object-fit: contain; */
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 3px;
+  user-select: none;
+  -webkit-user-select: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
 }

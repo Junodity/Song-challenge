@@ -11,11 +11,64 @@
       <h1>Life is not a game</h1>
       <h2>(but I think I'm winning)</h2>
     </header>
-    <div class="intro">Queer joy monologue</div>
-    <div class="picture">
-      <img src="C:\Users\Noru\Downloads\Untitled design (4).png" alt="" />
+    <div class="intro">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae
+      ullamcorper eros, ut ornare neque. Fusce mattis in mi non blandit. Morbi
+      massa nunc, posuere ac sagittis quis, aliquam nec massa. Fusce suscipit
+      ipsum a mollis imperdiet. Integer eleifend ligula at posuere posuere.
+      Praesent ornare ex a sollicitudin tincidunt. Ut malesuada volutpat erat
+      quis gravida. Maecenas faucibus suscipit urna, in cursus metus fermentum
+      nec. Suspendisse potenti. Proin ac risus at lectus pharetra egestas. Ut
+      facilisis rhoncus blandit. Donec vitae ante ut mauris faucibus dictum.
+      Duis cursus est quis ex egestas tempor.
+      <div class="picture">
+        <img src="C:\Users\Noru\Downloads\Untitled design (4).png" alt="" />
+      </div>
     </div>
-    <div class="gallery"></div>
+
+    <div class="polaroid-gallery">
+      <div class="stack">
+        <img class="under1" src="imgs/2.jpg" alt="" />
+        <img class="under2" src="imgs/5.jpg" alt="" />
+        <img class="cover" src="imgs/1.jpg" alt="" />
+
+        <img class="no-show" src="imgs/3.png" alt="" />
+        <img class="no-show" src="imgs/4.jpg" alt="" />
+        <img class="no-show" src="imgs/6.jpg" alt="" />
+        <img class="no-show" src="imgs/7.png" alt="" />
+      </div>
+
+      <!-- The Modal/Lightbox -->
+      <div id="gallery" class="gallery">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="gallery-content">
+          <div class="my-slides">
+            <img src="imgs/1.jpg" />
+          </div>
+          <div class="my-slides">
+            <img src="imgs/2.jpg" />
+          </div>
+          <div class="my-slides">
+            <img src="imgs/3.png" />
+          </div>
+          <div class="my-slides">
+            <img src="imgs/4.jpg" />
+          </div>
+          <div class="my-slides">
+            <img src="imgs/5.jpg" />
+          </div>
+          <div class="my-slides">
+            <img src="imgs/6.jpg" />
+          </div>
+          <div class="my-slides">
+            <img src="imgs/7.png" />
+          </div>
+          <!-- Next/previous controls -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+      </div>
+    </div>
     <div class="record-player"></div>
     <div class="about-fox"></div>
     <div class="quote-generator"></div>
@@ -24,5 +77,45 @@
         my links -->
     </footer>
   </body>
-  <script src="script.js"></script>
+  <script>
+    const gallery = document.querySelector(".gallery");
+    const slides = document.querySelectorAll(".my-slides");
+    const stack = document.querySelector(".stack");
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlides((slideIndex += n));
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+      showSlides((slideIndex = n));
+    }
+
+    function showSlides(n) {
+      let i;
+
+      if (n > slides.length) {
+        slideIndex = 1;
+      }
+      if (n < 1) {
+        slideIndex = slides.length;
+      }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+
+      slides[slideIndex - 1].style.display = "block";
+    }
+
+    stack.addEventListener("click", () => {
+      gallery.style.display = "flex";
+    });
+    // Close the Modal
+    function closeModal() {
+      gallery.style.display = "none";
+    }
+  </script>
 </html>
