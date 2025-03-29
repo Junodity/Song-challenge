@@ -9,6 +9,7 @@ h1 {
   color: blue;
 }
 
+/*Gallery styling*/
 .stack {
   position: relative;
   top: 150px;
@@ -136,4 +137,258 @@ h1 {
 
 .next {
   right: 10px;
+}
+
+/*Record player styling*/
+.turntable-wrapper {
+  position: absolute;
+  width: 310px;
+  height: 280px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+.turntable {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 310px;
+  height: 280px;
+  background: #9cd8bd;
+  border-radius: 5%;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.893);
+}
+
+.record {
+  position: absolute;
+  left: 20px;
+  top: 35px;
+  width: 200px;
+  height: 200px;
+  background: black;
+  border-radius: 50%;
+}
+
+.record::before {
+  content: "";
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: repeating-radial-gradient(
+    black,
+    black 5px,
+    #1c1c1c 6px,
+    #1c1c1c 7px
+  );
+  border-radius: 50%;
+}
+
+.overlay {
+  content: "";
+  left: 20px;
+  top: 35px;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    40%,
+    rgba(255, 255, 255, 0.208),
+    60%,
+    transparent
+  );
+  border-radius: 50%;
+}
+
+.inner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 55px;
+  height: 55px;
+  background: linear-gradient(white, white 50%, #f796a8 50%, #f796a8);
+  border-radius: 50%;
+}
+
+.inner::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: black;
+  border-radius: 50%;
+}
+
+.inner::after {
+  content: "Fox Gunn";
+  width: 55px;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 8px;
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  transform: translateX(-50%);
+}
+
+.arm-holder {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: gray;
+  border-radius: 50%;
+  right: 55px;
+  top: 30px;
+}
+
+.arm-holder::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  background: #939393;
+  border-radius: 50%;
+}
+.arm-wrapper {
+  position: absolute;
+  top: 10px;
+  right: 8px;
+  width: 100px;
+  height: 120px;
+  transform-origin: top;
+  transform: rotate(-25deg);
+  transition: 1s;
+}
+.arm {
+  position: absolute;
+  right: 13px;
+  width: 60px;
+  top: 10px;
+  height: 110px;
+  border: 10px solid #939393;
+  transform: skew(-20deg, -20deg);
+  transform-origin: top right;
+  border-left-color: transparent;
+  border-top-color: transparent;
+  border-radius: 0 0 30% 0;
+}
+
+.arm::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 30px;
+  background: gray;
+  transform: skew(20deg, 20deg) rotate(75deg);
+  top: 98px;
+  left: -10px;
+  border-radius: 20%;
+  clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+}
+
+.slider {
+  appearance: none;
+  transform: rotate(-90deg);
+  width: 130px;
+  height: 6px;
+  position: absolute;
+  right: -40px;
+  top: 170px;
+  background-color: #82b59e;
+  border-radius: 8px;
+  border: 6px solid #b6f9db;
+  cursor: pointer;
+}
+::-webkit-slider-thumb {
+  appearance: none;
+  height: 12px;
+  width: 12px;
+  background-color: #939393;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.play {
+  transform: rotate(0deg);
+  transform-origin: top;
+  transition: 1s;
+}
+
+/*Quote Generator styling*/
+button {
+  display: block;
+  margin: 20px auto;
+  background-color: #46367b;
+  color: #f0f8ff;
+  font-size: 15px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  transition: all 200ms ease-in-out;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+button:hover {
+  color: #46367b;
+  background-color: rgba(240, 248, 255, 0.4);
+  cursor: pointer;
+}
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 10px;
+  width: 50%;
+  overflow: hidden;
+}
+
+.modal-content p {
+  padding: 20px;
+  /* max-width: 50%; */
+  text-align: center;
+  margin: 0;
+  overflow-y: auto;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+.quote {
+  color: blueviolet;
+  /* text-align: center; */
 }

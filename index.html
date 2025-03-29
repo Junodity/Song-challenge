@@ -69,15 +69,71 @@
         </div>
       </div>
     </div>
-    <div class="record-player"></div>
-    <div class="about-fox"></div>
-    <div class="quote-generator"></div>
+    <div class="record-player">
+      <div class="turntable-wrapper">
+        <div class="turntable">
+          <div class="record">
+            <div class="inner"></div>
+          </div>
+          <div class="overlay"></div>
+          <div class="arm-holder">
+            <div class="arm-wrapper">
+              <div class="arm"></div>
+            </div>
+          </div>
+        </div>
+        <div class="slider-container">
+          <input
+            type="range"
+            class="slider"
+            min="0"
+            max="1"
+            step="0.1"
+            value="0.7"
+          />
+        </div>
+      </div>
+      <audio
+        loop
+        class="my-song"
+        src="C:\Users\Noru\Documents\Coding\SheCodes Challenge Most meaningful song\audio test\FOX GUNN - life is not a game (but I think Im winning) [LyricsVisualiser].mp3"
+        preload="auto"
+      ></audio>
+    </div>
+    <div class="about-fox">
+      <div class="know-fox">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae
+      ullamcorper eros, ut ornare neque. Fusce mattis in mi non blandit. Morbi
+      massa nunc, posuere ac sagittis quis, aliquam nec massa. Fusce suscipit
+      ipsum a mollis imperdiet. Integer eleifend ligula at posuere posuere.
+      Praesent ornare ex a sollicitudin tincidunt. Ut malesuada volutpat erat
+      quis gravida. Maecenas faucibus suscipit urna, in cursus metus fermentum
+      nec. Suspendisse potenti. Proin ac risus at lectus pharetra egestas. Ut
+      facilisis rhoncus blandit. Donec vitae ante ut mauris faucibus dictum.
+      Duis cursus est quis ex egestas tempor.
+      </div>
+      <div class="picture">
+        <img src="imgs/6.jpg" alt="" />
+    </div>
+    <div class="quote-generator">
+      <button class="button">get a quote</button>
+
+    <!-- Pop-up Modal -->
+    <div class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="modal-text" class="quote"></p>
+        <!-- need to add a classe to target it in css -->
+      </div>
+    </div>
+    </div>
     <footer>
       <!-- copyright & inspo
         my links -->
     </footer>
   </body>
   <script>
+    //Gallery script
     const gallery = document.querySelector(".gallery");
     const slides = document.querySelectorAll(".my-slides");
     const stack = document.querySelector(".stack");
@@ -114,8 +170,105 @@
       gallery.style.display = "flex";
     });
     // Close the Modal
-    function closeModal() {
+    function closeGalleryModal() {
       gallery.style.display = "none";
     }
+
+    //Record player script
+    let state = false;
+    let turntable = document.querySelector(".turntable");
+    let song = document.querySelector(".my-song");
+    let slider = document.querySelector(".slider");
+    let record = document.querySelector(".record");
+    let arm = document.querySelector(".arm-wrapper");
+
+    let rotation = 0;
+    let animationFrame;
+
+    // Function to rotate the record smoothly
+    function rotateRecord() {
+      rotation += 2.5; // Adjust speed if needed
+      record.style.transform = `rotate(${rotation}deg)`;
+      animationFrame = requestAnimationFrame(rotateRecord);
+    }
+
+    turntable.addEventListener("click", () => {
+      if (!state) {
+        arm.classList.add("play");
+        setTimeout(() => {
+          song.play();
+          rotateRecord(); // Start rotating the record
+        }, 1000);
+      } else {
+        arm.classList.remove("play");
+        song.pause();
+        cancelAnimationFrame(animationFrame); // Stop rotation but keep position
+      }
+      state = !state;
+    });
+
+    // Adjust volume with slider
+    slider.addEventListener("input", (e) => {
+      song.volume = Number(e.target.value);
+    });
+
+    //quote generator script
+    const modal = document.querySelector(".modal");
+        const modalText = document.querySelector(".quote");
+        const closeQuoteModal = document.querySelector(".close");
+        const button = document.querySelector(".button");
+        let quotes = [
+          "Començo a pensar que m'ha fet un embruix<br><span style='color: gray;'>(I'm starting to think she's cast a spell on me)</span>",
+          `Always at the casino, but the only thing I'm trying to win tonight is <br> you
+      `,
+          `She says she wants to learn my language <br>
+          Yo te doy una clase privada, mi amor
+          <br> (I'll give you a private lesson, my love)
+          <br> But I'll be out the door in the morning
+          `,
+          `Just a bite won't be enough
+          <br> I want that movie typе of love
+          `,
+          `I think I loved you like there was no tomorrow
+          <br> But now it's time to love like there is
+          `,
+          `Now I've got so much love to give
+          <br> But I can't find the one to give it all to all to
+          <br> I'll share it bit by bit
+          <br> I got some for you and you, and you, and you…
+          `,
+          `I was never good at goodbyes
+          <br> Now I've hurt my wrist from all this waving`,
+
+          "When my soul was in the lost and found <br> You came along to claim it",
+        ];
+
+        let seenQuotes = [];
+
+        button.addEventListener("click", () => {
+          if (seenQuotes.length === quotes.length) {
+            seenQuotes = [];
+          }
+
+          let newQuote;
+          do {
+            newQuote = quotes[Math.floor(Math.random() * quotes.length)];
+          } while (seenQuotes.includes(newQuote)); // Keep generating until it's a new quote
+          seenQuotes.push(newQuote); // Add to seen quotes
+          modalText.innerHTML = newQuote;
+          modal.style.display = "flex";
+        });
+
+        // Close modal
+        closeQuoteModal.addEventListener("click", () => {
+          modal.style.display = "none";
+        });
+
+        // Close modal when clicking outside the modal-content
+        window.addEventListener("click", (e) => {
+          if (e.target === modal) {
+            modal.style.display = "none";
+          }
+        });
   </script>
 </html>
