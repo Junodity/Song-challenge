@@ -115,8 +115,8 @@ Whether you listen to her songs while crying your heart out at home or while pai
     </div>
     <footer>
       <div class="links">
-        <a href="https://www.instagram.com/foxgunnnnn/">Follow Fox on Instagram</a>
-        <a href="https://www.tiktok.com/@foxgunnnnn">Learn Catalan with Foxlingo on TikTok</a>
+        <a href="https://www.instagram.com/foxgunnnnn/" target="_blank">Follow Fox on Instagram</a>
+        <a href="https://www.tiktok.com/@foxgunnnnn" target="_blank">Learn Catalan with Foxlingo on TikTok</a>
       </div>
       <div class="copyrights"></div>
       <div class="my-info">
@@ -236,7 +236,15 @@ Whether you listen to her songs while crying your heart out at home or while pai
           "When my soul was in the lost and found <br> You came along to claim it",
         ];
 
-        let sources = ["Listen to Crush on <a href= 'https://papago.naver.com/'>Spotify</a>"];
+        let sources = [
+        "Listen to Crush on <a href= 'https://papago.naver.com/' target='_blank'>Spotify</a>", 
+        "Listen to Use me Properly on <a href= 'https://papago.naver.com/' target='_blank'>Spotify</a>", 
+        "Listen to IDON’TWANTTHISBUTIWANTHER on <a href= 'https://papago.naver.com/' target='_blank'>Spotify</a>",
+        "Listen to Dessert on <a href= 'https://papago.naver.com/' target='_blank'>Spotify</a>", 
+        "Listen to Pottery on <a href= 'https://papago.naver.com/' target='_blank'>Spotify</a>",
+        "Listen to All my lovers hate each other on <a href= 'https://papago.naver.com/' target='_blank'>Spotify</a>", 
+        "Listen to Reckless on <a href= 'https://papago.naver.com/' target='_blank'>Spotify</a>",
+        "Listen to (You make me feel like) A natural woman on <a href= 'https://papago.naver.com/' target='_blank'>Spotify</a>"];
 
         let seenQuotes = [];
 
@@ -251,7 +259,8 @@ Whether you listen to her songs while crying your heart out at home or while pai
           } while (seenQuotes.includes(newQuote)); // Keep generating until it's a new quote
           seenQuotes.push(newQuote); // Add to seen quotes
           modalText.innerHTML = newQuote;
-          modalTextSource.innerHTML = sources[newQuote.indexOf];
+          const quoteIndex = quotes.indexOf(newQuote);
+          modalTextSource.innerHTML = sources[quoteIndex];
           modal.style.display = "flex";
         });
 
