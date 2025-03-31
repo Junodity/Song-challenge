@@ -12,15 +12,10 @@
       <h2>(but I think I'm winning)</h2>
     </header>
     <div class="intro">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae
-      ullamcorper eros, ut ornare neque. Fusce mattis in mi non blandit. Morbi
-      massa nunc, posuere ac sagittis quis, aliquam nec massa. Fusce suscipit
-      ipsum a mollis imperdiet. Integer eleifend ligula at posuere posuere.
-      Praesent ornare ex a sollicitudin tincidunt. Ut malesuada volutpat erat
-      quis gravida. Maecenas faucibus suscipit urna, in cursus metus fermentum
-      nec. Suspendisse potenti. Proin ac risus at lectus pharetra egestas. Ut
-      facilisis rhoncus blandit. Donec vitae ante ut mauris faucibus dictum.
-      Duis cursus est quis ex egestas tempor.
+      Unapologetically queer, this song expresses the love of someone that found themselves after losing themselves so many times. This love is like a precious gem that you want to treasure and keep all to yourself; yet, it is so beautiful and powerful that you also want to shout it to the world. This new version of you is finally ready to be happy.
+It’s about finding peace after going through a rough time; it’s a warm sunray putting an end to a cold winter; it is love, at last.
+It’s a piece of pure queer joy.
+
       <div class="picture">
         <img src="C:\Users\Noru\Downloads\Untitled design (4).png" alt="" />
       </div>
@@ -97,15 +92,10 @@
     </div>
     <div class="about-fox">
       <div class="know-fox">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae
-      ullamcorper eros, ut ornare neque. Fusce mattis in mi non blandit. Morbi
-      massa nunc, posuere ac sagittis quis, aliquam nec massa. Fusce suscipit
-      ipsum a mollis imperdiet. Integer eleifend ligula at posuere posuere.
-      Praesent ornare ex a sollicitudin tincidunt. Ut malesuada volutpat erat
-      quis gravida. Maecenas faucibus suscipit urna, in cursus metus fermentum
-      nec. Suspendisse potenti. Proin ac risus at lectus pharetra egestas. Ut
-      facilisis rhoncus blandit. Donec vitae ante ut mauris faucibus dictum.
-      Duis cursus est quis ex egestas tempor.
+      Often described as a chaotic Virgo, Fox Gunn is a London-based independent singer-songwriter who mixes her Catalan heritage in alternative pop melodies. Inspired by rock, electronic, and many other genres, she ditched her classical sheet music to create her own tunes.
+Fox’s tracks tell you stories about queer love, about break-ups and healing. They are packed with vulnerability and rawness but smoothed with deep emotions and realness. Her diary-like, bilingual lyrics let you into her world in an honest and badass way. 
+Whether you listen to her songs while crying your heart out at home or while painting the town red with your best friends, Fox Gunn will charm you with her warm smile and flirty lines. 
+
       </div>
       <div class="picture">
         <img src="imgs/6.jpg" alt="" />
@@ -118,6 +108,7 @@
       <div class="modal-content">
         <span class="close">&times;</span>
         <p id="modal-text" class="quote"></p>
+        <p id="modal-text-source" class="source"></p>
         <!-- need to add a classe to target it in css -->
       </div>
     </div>
@@ -216,6 +207,7 @@
     //quote generator script
     const modal = document.querySelector(".modal");
         const modalText = document.querySelector(".quote");
+        const modalTextSource = document.querySelector(".source");
         const closeQuoteModal = document.querySelector(".close");
         const button = document.querySelector(".button");
         let quotes = [
@@ -244,6 +236,8 @@
           "When my soul was in the lost and found <br> You came along to claim it",
         ];
 
+        let sources = ["Listen to Crush on <a href= 'https://papago.naver.com/'>Spotify</a>"];
+
         let seenQuotes = [];
 
         button.addEventListener("click", () => {
@@ -257,6 +251,7 @@
           } while (seenQuotes.includes(newQuote)); // Keep generating until it's a new quote
           seenQuotes.push(newQuote); // Add to seen quotes
           modalText.innerHTML = newQuote;
+          modalTextSource.innerHTML = sources[newQuote.indexOf];
           modal.style.display = "flex";
         });
 
