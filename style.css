@@ -4,16 +4,77 @@ body {
     rgb(252, 165, 241) 1.8%,
     rgb(181, 255, 255) 100.5%
   );
-}
-h1 {
-  color: blue;
+  overflow-x: hidden;
 }
 
+h1,
+h2 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: center;
+}
+h1 {
+  /* margin-top: 80px; */
+  padding-top: 50px;
+}
+h2 {
+  margin-bottom: 80px;
+}
+
+.second-part {
+  background-color: #db9ffe; /* light pastel purple, or any color you want */
+  padding-bottom: 120px;
+  margin: 20px;
+  border-radius: 15px;
+}
+
+.intro-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* or center if you want vertical centering too */
+  width: 100%;
+}
+
+.intro-wrapper {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.intro {
+  background-color: rgba(240, 248, 255, 0.8);
+  border-radius: 18px;
+  margin: 0 auto;
+  max-width: 80%;
+  height: fit-content;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  padding: 0;
+  overflow: hidden; /* hide any overflow */
+  /*changer la couleur pour qque chose de plus doux?*/
+}
+
+.intro-text {
+  text-align: center;
+  max-width: 70%;
+  padding: 20px;
+}
+
+.intro-picture {
+  position: absolute;
+  bottom: -288px;
+  right: -25px; /* Adjust this to overlap nicely */
+  z-index: 2;
+}
+
+.intro-picture img {
+  height: 960px;
+  width: 540px;
+}
 /*Gallery styling*/
 .stack {
   position: relative;
-  top: 150px;
-  left: 150px;
+  top: 50px;
+  left: 350px;
   width: 300px;
   height: 300px;
   transition: all ease-in-out 0.5s;
@@ -22,8 +83,8 @@ h1 {
   position: absolute;
   max-width: 300px;
   max-height: 300px;
-  border: solid 15px #eaeaea;
-  border-bottom: solid 90px #eaeaea;
+  border: solid 15px #ffffff;
+  border-bottom: solid 90px #fffefe;
 }
 
 .cover {
@@ -140,14 +201,26 @@ h1 {
 }
 
 /*Record player styling*/
+.record-player p {
+  position: relative;
+  top: -80px;
+  padding-bottom: 10px;
+  text-align: center;
+}
 .turntable-wrapper {
   position: absolute;
   width: 310px;
   height: 280px;
   left: 50%;
-  top: 50%;
+  top: 150%;
   transform: translate(-50%, -50%);
   cursor: pointer;
+}
+
+.record-player {
+  position: relative;
+  top: -140px;
+  left: 260px;
 }
 .turntable {
   position: absolute;
@@ -327,6 +400,31 @@ h1 {
   transition: 1s;
 }
 
+.end-pic img {
+  width: 20%;
+  height: 20%;
+  right: 20px;
+}
+
+.know-fox {
+  background-color: rgba(240, 248, 255, 0.8);
+  border-radius: 18px;
+  margin: 0 auto;
+  margin-top: 220px;
+  max-width: 80%;
+  height: fit-content;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  padding: 0;
+  overflow: hidden; /* hide any overflow */
+  /*changer la couleur pour qque chose de plus doux?*/
+}
+
+.know-fox p {
+  text-align: center;
+  max-width: 70%;
+  padding: 20px;
+}
+
 /*Quote Generator styling*/
 button {
   display: block;
@@ -397,4 +495,10 @@ button:hover {
   color: red;
   display: flex;
   justify-content: flex-end;
+}
+
+footer {
+  background-color: #82b59e;
+  margin: 0;
+  padding: 0;
 }
