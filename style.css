@@ -401,16 +401,40 @@ h2 {
 }
 
 .end-pic img {
-  width: 20%;
-  height: 20%;
-  right: 20px;
+  position: absolute;
+  right: 70px;
+  top: 1000px;
+  max-width: 330px;
+  max-height: 330px;
+  border: solid 15px #ffffff;
+  border-bottom: solid 90px #fffefe;
+  transform: rotate(10deg);
 }
-
+.end-pic::before,
+.end-pic::after {
+  content: "";
+  position: absolute;
+  height: 50px;
+  width: 180px;
+  background-color: rgba(102, 102, 102, 0.6);
+  transform: rotate(40deg);
+}
+.end-pic::before {
+  top: 1020px;
+  right: 0px;
+  z-index: 2;
+}
+.end-pic::after {
+  top: 1260px;
+  right: 330px;
+  z-index: 2;
+  transform: rotate(30deg);
+}
 .know-fox {
   background-color: rgba(240, 248, 255, 0.8);
   border-radius: 18px;
   margin: 0 auto;
-  margin-top: 220px;
+  margin-top: 100px;
   max-width: 80%;
   height: fit-content;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
@@ -486,6 +510,7 @@ button:hover {
   color: white;
   cursor: pointer;
 }
+
 .quote {
   color: blueviolet;
   /* text-align: center; */
