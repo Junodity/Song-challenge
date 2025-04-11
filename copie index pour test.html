@@ -5,16 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Life is not a game</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=National+Park:wght@200..800&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
-      <h1>Life is not a game</h1>
-      <h2>(but I think I'm winning)</h2>
+      <h1 class="national-park-title">Life is not a game</h1>
+      <h2 class="national-park-subtitle">(but I think I'm winning)</h2>
     </header>
     <div class="intro-container">
       <div class="intro-wrapper">
       <div class="intro">
-        <p class="intro-text">Unapologetically queer, this song expresses the love of someone that found themselves 
+        <p class="intro-text national-park-main-text">
+          Unapologetically queer, this song expresses the love of someone that found themselves 
           after losing themselves so many times. 
           <br>This love is like a precious gem that you want to treasure and keep all to yourself; 
           yet, it is so beautiful and powerful that you also want to shout it to the world. 
@@ -43,25 +47,37 @@
         <span class="close cursor" onclick="closeGalleryModal()">&times;</span>
         <div class="gallery-content">
           <div class="my-slides">
-            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/162/470/original/1.jpg?1744025831" alt="Fox is wearing a black jacket, white tee-shirt and dark green beanie with several chains and piercings. She is looking to the left side with a light smile. The picture has purple and blue lights." />
+            <a href="https://www.instagram.com/p/DGygYgtO-hz/?img_index=1" target="_blank"><img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/162/470/original/1.jpg?1744025831" alt="Fox is wearing a black jacket, white tee-shirt and dark green beanie with several chains and piercings. She is looking to the left side with a light smile. The picture has purple and blue lights." />
+            </a>
+            
           </div>
           <div class="my-slides">
-            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/162/471/original/2.jpg?1744026020" alt="Fox is crossing a road in front of a store named ‘The Fox’. We can see several Fox Gunn posters on the front of the shop."/>
+            <a href="https://www.instagram.com/p/C7wyWbQoWf8/?img_index=1" target="_blank"><img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/162/471/original/2.jpg?1744026020" alt="Fox is crossing a road in front of a store named ‘The Fox’. We can see several Fox Gunn posters on the front of the shop."/>
+            </a>
           </div>
           <div class="my-slides">
-            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/162/472/original/3.png?1744026137" alt="The singer is blurred in the background. We can see her hand wearing several rings rested on a microphone pole."/>
+            <a href="https://www.instagram.com/p/C33MuTHrui9/?img_index=3" target="_blank"><img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/162/472/original/3.png?1744026137" alt="The singer is blurred in the background. We can see her hand wearing several rings rested on a microphone pole."/>
+            </a>
           </div>
           <div class="my-slides">
-            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/162/473/original/4.jpg?1744026171" alt="Fox is leaning backward on a bed while her girlfriend films her with a vintage camera. There is a caption saying “I told my therapist about you” at the bottom of the picture." />
+            <a href="https://www.instagram.com/p/C8M8JNitvyw/?img_index=1" target="_blank"> <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/162/473/original/4.jpg?1744026171" alt="Fox is leaning backward on a bed while her girlfriend films her with a vintage camera. There is a caption saying “I told my therapist about you” at the bottom of the picture." />
+            </a>
+           
           </div>
           <div class="my-slides">
-            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/162/474/original/5.jpg?1744026218" alt="Fox is leaning on a railing, looking straight into the camera through her wet hair. She is wearing a grey tank top, a silver watch and silver jewelry. She has tattoos on her arms and right hand." />
+            <a href="https://www.instagram.com/p/C74JHUhNrBP/?img_index=1" target="_blank"><img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/162/474/original/5.jpg?1744026218" alt="Fox is leaning on a railing, looking straight into the camera through her wet hair. She is wearing a grey tank top, a silver watch and silver jewelry. She has tattoos on her arms and right hand." />
+            </a>
+            
           </div>
           <div class="my-slides">
-            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/162/475/original/6.jpg?1744026241" alt="Fox has her mouth wide opened and is eating a bagel. She is wearing a black beanie and green velvet jacket with a yellow patch."/>
+            <a href="https://www.instagram.com/p/C5HUve2tJ4E/?img_index=4" target="_blank"><img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/162/475/original/6.jpg?1744026241" alt="Fox has her mouth wide opened and is eating a bagel. She is wearing a black beanie and green velvet jacket with a yellow patch."/>
+            </a>
+            
           </div>
           <div class="my-slides">
-            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/162/476/original/7.png?1744026422" alt="The singer and two musicians are smiling after a concert with the public in the background."/>
+            <a href="https://www.instagram.com/foxgunnnnn/" target="_blank"><img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/162/476/original/7.png?1744026422" alt="The singer and two musicians are smiling after a concert with the public in the background."/>
+            </a>
+            
           </div>
           <!-- Next/previous controls -->
           <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -69,11 +85,13 @@
         </div>
       </div>
       <div class="record-player">
-      <p>Play me!</p>
+      <p class="caveat-handwritten">Play me!</p>
       <div class="turntable-wrapper">
         <div class="turntable">
           <div class="record">
-            <div class="inner"></div>
+            <div class="inner">
+              <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/162/851/original/linag.jpg?1744373736" alt="life is not a game cover picture"/>
+            </div>
           </div>
           <div class="overlay"></div>
           <div class="arm-holder">
@@ -106,19 +124,25 @@
     
     <div class="about-fox">
       <div class="know-fox">
-      <p>
-        Often described as a chaotic Virgo, Fox Gunn is a London-based independent singer-songwriter who mixes her Catalan heritage in alternative pop melodies. Inspired by rock, electronic, and many other genres, she ditched her classical sheet music to create her own tunes.
-        Fox’s tracks tell you stories about queer love, about break-ups and healing. They are packed with vulnerability and rawness but smoothed with deep emotions and realness. Her diary-like, bilingual lyrics let you into her world in an honest and badass way. 
-        Whether you listen to her songs while crying your heart out at home or while painting the town red with your best friends, Fox Gunn will charm you with her warm smile and flirty lines. 
+      <p class="national-park-main-text">
+        Often described as a chaotic Virgo, Fox Gunn is a London-based independent singer-songwriter 
+        who mixes her Catalan heritage in alternative pop melodies. Inspired by rock, electronic, and many other genres, 
+        she ditched her classical sheet music to create her own tunes.
+        Fox’s tracks tell you stories about queer love, about break-ups and healing. They are packed with vulnerability 
+        and rawness but smoothed with deep emotions and realness. Her diary-like, bilingual lyrics let you into her 
+        world in an honest and badass way. 
+        <br>Whether you listen to her songs while crying your heart out at home or while painting the town red with your 
+        best friends, Fox Gunn will charm you with her warm smile and flirty lines. 
       </p>
       </div>
       <div class="end-pic">
         <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/162/582/original/my_muse__I_think_it%E2%80%99s_time_we_call_it_truce%E2%80%A6_-__karu_borge.jpg?1744117217" alt="Fox is looking straight at the camera through a mirror. There are train tracks in the background." />
     </div>
     <div class="quote-generator">
-      <span>Want to discover other Fox Gunn songs? Get a quote!</span>
-      <button class="button">get a quote</button>
-      <span>I had to leave my faves out, to keep it PG and all that (I shared those with my friends ;) )</span>
+      <span class="national-park-main-text">Want to discover other Fox Gunn songs? Get a quote!</span>
+      <button class="button national-park-main-text">Get a quote!</button>
+      <span class="pg-note caveat-handwritten">I had to leave my faves out, keep it PG and all that 
+        (I shared those with my friends ;) )</span>
 
     <!-- Pop-up Modal -->
     <div class="modal">
@@ -132,14 +156,25 @@
     </div>
     <footer>
       <div class="links">
-        <span class="social-links">Follow Fox on<a href="https://www.instagram.com/foxgunnnnn/" target="_blank"> Instagram</a> <br>
-        Learn Catalan with Foxlingo on<a href="https://www.tiktok.com/@foxgunnnnn" target="_blank"> TikTok</span>
+        <span class="social-links national-park-main-text">Follow Fox on
+          <a href="https://www.instagram.com/foxgunnnnn/" target="_blank"> Instagram
+          </a> 
+          <br>
+        Learn Catalan with Foxlingo on
+        <a href="https://www.tiktok.com/@foxgunnnnn" target="_blank"> TikTok
+        </a>
+      </span>
       </div>
-      <div class="copyrights">
+      <div class="copyrights caveat-handwritten">
         All media, including the pictures and the song, belong to Fox Gunn
       </div>
-      <div class="my-info">
-        This project was coded by Nolwenn <br> Learn more on <a href="https://github.com/Junodity/Song-challenge" target="_blank">Github</a>
+      <div class="my-info national-park-main-text">
+        This project was coded by Nolwenn as part of the 
+        <a href="https://www.shecodes.io/contests/most-meaningful-song-challenge">Most Meaningful Song Challenge
+        </a> organised by SheCodes in July 2024.
+        <br> Learn more on 
+        <a href="https://github.com/Junodity/Song-challenge" target="_blank">Github
+        </a>
       </div>
     </footer>
   </body>
@@ -265,7 +300,7 @@ rotateRecord(); // Start rotating the record
       `,
           `She says she wants to learn my language <br>
           Yo te doy una clase privada, mi amor
-          <br> (I'll give you a private lesson, my love)
+          <br> <span style='color: gray;'>(I'll give you a private lesson, my love)</span>
           <br> But I'll be out the door in the morning
           `,
           `Just a bite won't be enough
@@ -286,14 +321,14 @@ rotateRecord(); // Start rotating the record
         ];
 
         let sources = [
-        "Listen to Crush on <a href= 'https://open.spotify.com/intl-fr/track/5gPKKLIHcsJ4sxzfgiBlGr?si=add30ce55c4447af' target='_blank'> Spotify</a>", 
-        "Listen to Use me Properly on <a href= 'https://open.spotify.com/intl-fr/track/4ARvjWJ9UUxEiw3GJYao8D?si=1fe31c43ff1c4850' target='_blank'> Spotify</a>", 
-        "Listen to IDON’TWANTTHISBUTIWANTHER on <a href= 'https://open.spotify.com/intl-fr/track/0q8x1YAG8t69IshzffO3LB?si=39b3df18ccf3420d' target='_blank'> Spotify</a>",
-        "Listen to Dessert on <a href= 'https://open.spotify.com/intl-fr/track/1Nfs6XsZ3XdBvFxF7w5UfS?si=4a78217caa5a4ced' target='_blank'> Spotify</a>", 
-        "Listen to Pottery on <a href= 'https://open.spotify.com/intl-fr/track/6bqXuG2HwpsqOXGPwgAKid?si=bf60328051594c9f' target='_blank'> Spotify</a>",
-        "Listen to All my lovers hate each other on <a href= 'https://open.spotify.com/intl-fr/track/1SFqJaeW9oxLlNZsnKJmiu?si=0e3427e8b2134d66' target='_blank'> Spotify</a>", 
-        "Listen to Reckless on <a href= 'https://open.spotify.com/intl-fr/track/0QnKtJW0k4iRXZNWnUlOK5?si=89ddca5cc8354f08' target='_blank'> Spotify</a>",
-        "Listen to (You make me feel like) A natural woman on <a href= 'https://open.spotify.com/intl-fr/track/4JTO51SYpsAeHYqKAKQcX3?si=555047b550cb493e' target='_blank'> Spotify</a>"];
+        "Listen to Crush on <a href='https://open.spotify.com/intl-fr/track/5gPKKLIHcsJ4sxzfgiBlGr?si=add30ce55c4447af' target='_blank'> Spotify</a>", 
+        "Listen to Use me Properly on <a href='https://open.spotify.com/intl-fr/track/4ARvjWJ9UUxEiw3GJYao8D?si=1fe31c43ff1c4850' target='_blank'> Spotify</a>", 
+        "Listen to IDON’TWANTTHISBUTIWANTHER on <a href='https://open.spotify.com/intl-fr/track/0q8x1YAG8t69IshzffO3LB?si=39b3df18ccf3420d' target='_blank'> Spotify</a>",
+        "Listen to Dessert on <a href='https://open.spotify.com/intl-fr/track/1Nfs6XsZ3XdBvFxF7w5UfS?si=4a78217caa5a4ced' target='_blank'> Spotify</a>", 
+        "Listen to Pottery on <a href='https://open.spotify.com/intl-fr/track/6bqXuG2HwpsqOXGPwgAKid?si=bf60328051594c9f' target='_blank'> Spotify</a>",
+        "Listen to All my lovers hate each other on <a href='https://open.spotify.com/intl-fr/track/1SFqJaeW9oxLlNZsnKJmiu?si=0e3427e8b2134d66' target='_blank'> Spotify</a>", 
+        "Listen to Reckless on <a href='https://open.spotify.com/intl-fr/track/0QnKtJW0k4iRXZNWnUlOK5?si=89ddca5cc8354f08' target='_blank'> Spotify</a>",
+        "Listen to (You make me feel like) A natural woman on <a href='https://open.spotify.com/intl-fr/track/4JTO51SYpsAeHYqKAKQcX3?si=555047b550cb493e' target='_blank'> Spotify</a>"];
 
         let seenQuotes = [];
 

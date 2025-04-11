@@ -1,12 +1,42 @@
 body {
-  background: rgb(253, 243, 227);
+  background: linear-gradient(
+    150.7deg,
+    rgb(233, 164, 247) 19.9%,
+    rgb(6, 3, 143) 95%
+  );
+
   overflow-x: hidden;
+}
+.national-park-title {
+  font-family: "National Park", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: bold;
+}
+.national-park-subtitle {
+  font-family: "National Park", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+.national-park-main-text {
+  font-family: "National Park", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.caveat-handwritten {
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 25px;
+  font-style: normal;
 }
 
 h1,
 h2 {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   text-align: center;
+  color: #f2f3fe;
 }
 h1 {
   /* margin-top: 80px; */
@@ -31,7 +61,7 @@ h2 {
 }
 
 .intro {
-  background-color: rgba(240, 248, 255, 0.8);
+  background-color: #f2f3fe;
   border-radius: 18px;
   margin: 0 auto;
   max-width: 80%;
@@ -62,7 +92,7 @@ h2 {
 
 .second-part {
   /* light pastel purple, or any color you want */
-  border: 3px solid #b988ab;
+  border: 3px solid #06038f;
   max-width: 80%;
   padding-bottom: 140px;
   margin: 0 auto;
@@ -72,12 +102,12 @@ h2 {
 /*Gallery styling*/
 .stack {
   position: relative;
-  top: 50px;
+  top: 60px;
   left: 250px;
   width: 300px;
   height: 300px;
   transition: all ease-in-out 0.5s;
-  transform: rotate(-20deg);
+  /* transform: rotate(-20deg); */
 }
 .stack img {
   position: absolute;
@@ -204,8 +234,9 @@ h2 {
 .record-player p {
   position: relative;
   top: -80px;
-  padding-bottom: 10px;
+  /* padding-bottom: 10px; */
   text-align: center;
+  color: #f2f3fe;
 }
 .turntable-wrapper {
   position: absolute;
@@ -229,7 +260,7 @@ h2 {
   transform: translate(-50%, -50%);
   width: 310px;
   height: 280px;
-  background: #c04273;
+  background: #db9df7;
   border-radius: 5%;
   box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.893);
 }
@@ -279,31 +310,31 @@ h2 {
   border-radius: 50%;
 }
 
-.inner {
+.inner img {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   width: 55px;
   height: 55px;
-  background: linear-gradient(white, white 50%, #f796a8 50%, #f796a8);
+  /* background: linear-gradient(white, white 50%, #f796a8 50%, #f796a8); */
   border-radius: 50%;
 }
 
-.inner::before {
+.inner::after {
   content: "";
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 10px;
-  height: 10px;
+  width: 5px;
+  height: 5px;
   background: black;
   border-radius: 50%;
 }
 
-.inner::after {
-  content: "Fox Gunn";
+/*.inner::after {
+  content: "";
   width: 55px;
   text-align: center;
   font-family: sans-serif;
@@ -312,7 +343,7 @@ h2 {
   left: 50%;
   top: 10px;
   transform: translateX(-50%);
-}
+}*/
 
 .arm-holder {
   position: absolute;
@@ -380,9 +411,9 @@ h2 {
   position: absolute;
   right: -40px;
   top: 170px;
-  background-color: #ae3563;
+  background-color: #b477d0;
   border-radius: 8px;
-  border: 6px solid #d65e8c;
+  border: 6px solid #cd88ec;
   cursor: pointer;
 }
 ::-webkit-slider-thumb {
@@ -403,7 +434,7 @@ h2 {
 .end-pic img {
   position: absolute;
   right: 70px;
-  top: 1000px;
+  top: 1120px;
   max-width: 330px;
   max-height: 330px;
   border: solid 15px #ffffff;
@@ -416,22 +447,22 @@ h2 {
   position: absolute;
   height: 50px;
   width: 180px;
-  background-color: rgba(192, 66, 115, 0.6);
+  background-color: #97fafdb0;
   transform: rotate(40deg);
 }
 .end-pic::before {
-  top: 1020px;
+  top: 1140px;
   right: 0px;
   z-index: 2;
 }
 .end-pic::after {
-  top: 1260px;
+  top: 1380px;
   right: 330px;
   z-index: 2;
   transform: rotate(30deg);
 }
 .know-fox {
-  background-color: rgba(240, 248, 255, 0.8);
+  background-color: #f2f3fe;
   border-radius: 18px;
   margin: 0 auto;
   margin-top: 100px;
@@ -444,7 +475,7 @@ h2 {
 }
 
 .know-fox p {
-  text-align: center;
+  /* text-align: center; */
   max-width: 70%;
   padding: 20px;
 }
@@ -453,8 +484,8 @@ h2 {
 button {
   display: block;
   margin: 20px auto;
-  background-color: #46367b;
-  color: #f0f8ff;
+  background-color: #f2f3fe;
+  color: #e9a4f7;
   font-size: 15px;
   padding: 10px 15px;
   border: none;
@@ -465,8 +496,8 @@ button {
 }
 
 button:hover {
-  color: #46367b;
-  background-color: rgba(240, 248, 255, 0.4);
+  color: #f2f3fe;
+  background-color: #e9a4f7;
   cursor: pointer;
 }
 
@@ -486,16 +517,18 @@ button:hover {
 
 .modal-content {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: white;
+  background: #f2f3fe;
   border-radius: 10px;
   width: 50%;
   overflow: hidden;
+  padding: 20px;
 }
 
 .modal-content p {
-  padding: 20px;
+  padding: 10px 20px;
   /* max-width: 50%; */
   text-align: center;
   margin: 0;
@@ -512,18 +545,45 @@ button:hover {
 }
 
 .quote {
-  color: blueviolet;
+  color: #06038f;
+  font-style: italic;
   /* text-align: center; */
 }
 
 .source {
-  color: red;
-  display: flex;
-  justify-content: flex-end;
+  color: #e9a4f7;
+}
+
+.quote-generator {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #f2f3fe;
+}
+.pg-note {
+  font-size: 20px;
 }
 
 footer {
-  background-color: #82b59e;
+  border-radius: 18px;
   margin: 0;
   padding: 0;
+  color: #f2f3fe;
+}
+a {
+  color: #db9df7;
+}
+.copyrights {
+  text-align: center;
+  font-size: 20px;
+  padding: 15px;
+}
+
+.links,
+.my-info {
+  margin-left: 30px;
+}
+
+.links {
+  padding: 10px;
 }
