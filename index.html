@@ -4,73 +4,678 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Life is not a game</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=National+Park:wght@200..800&display=swap" 
+rel="stylesheet">
+<style>
+
+  body {
+  background: linear-gradient(
+    150.7deg,
+    rgb(233, 164, 247) 19.9%,
+    rgb(6, 3, 143) 95%
+  );
+  overflow-x: hidden;
+}
+.national-park-title {
+  font-family: "National Park", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: bold;
+}
+.national-park-subtitle {
+  font-family: "National Park", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+.national-park-main-text {
+  font-family: "National Park", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.caveat-handwritten {
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 25px;
+  font-style: normal;
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: #f2f3fe;
+}
+h1 {
+  padding-top: 50px;
+}
+h2 {
+  margin-bottom: 80px;
+}
+
+.intro-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+}
+.intro-wrapper {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  width: fit-content;
+}
+.intro {
+  background-color: #f2f3fe;
+  border-radius: 18px;
+  margin: 0 auto;
+  max-width: 80%;
+  height: fit-content;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  padding: 0;
+  overflow: hidden;
+}
+.intro-text {
+  text-align: center;
+  max-width: 70%;
+  padding: 20px;
+  line-height: 25px;
+}
+.intro-picture {
+  position: absolute;
+  bottom: -288px;
+  right: -18px;
+  z-index: 2;
+}
+.intro-picture img {
+  height: 960px;
+  width: 540px;
+}
+
+.second-part {
+  border: 3px solid #06038f;
+  max-width: 80%;
+  padding-bottom: 140px;
+  margin: 0 auto;
+  margin-top: 40px;
+  border-radius: 15px;
+}
+
+/*Gallery styling*/
+.stack {
+  position: relative;
+  top: 60px;
+  left: 250px;
+  width: 300px;
+  height: 300px;
+  transition: all ease-in-out 0.5s;
+}
+.stack img {
+  position: absolute;
+  max-width: 300px;
+  max-height: 300px;
+  border: solid 15px #ffffff;
+  border-bottom: solid 90px #fffefe;
+}
+.cover {
+  border: solid 15px #eaeaea;
+  border-bottom: solid 90px #eaeaea;
+  transition: all ease-in-out 0.5s;
+}
+.no-show {
+  display: none;
+}
+.under1 {
+  transform: rotate(-10deg);
+  transition: all ease-in-out 0.5s;
+}
+.under2 {
+  transform: rotate(10deg);
+  transition: all ease-in-out 0.5s;
+}
+.stack:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  transition: all ease-in-out 0.5s;
+}
+.stack:hover .under1 {
+  transform: rotate(-15deg);
+  transition: all ease-in-out 0.5s;
+}
+.stack:hover .under2 {
+  transform: rotate(15deg);
+  transition: all ease-in-out 0.5s;
+}
+
+/* The Modal (background) */
+.gallery {
+  display: none; /* Keep it hidden initially */
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.279);
+  transform: translate(-50%, -50%);
+}
+.gallery-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+/* Modal Content */
+.gallery-content img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 95%;
+  max-height: 95vh;
+}
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1000;
+}
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 3px;
+  user-select: none;
+  -webkit-user-select: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.prev {
+  left: 10px;
+}
+.next {
+  right: 10px;
+}
+
+/*Record player styling*/
+.record-player p {
+  position: relative;
+  top: -80px;
+  text-align: center;
+  color: #f2f3fe;
+}
+.turntable-wrapper {
+  position: absolute;
+  width: 310px;
+  height: 280px;
+  left: 50%;
+  top: 150%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+.record-player {
+  position: relative;
+  top: -140px;
+  left: 260px;
+}
+.turntable {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 310px;
+  height: 280px;
+  background: #db9df7;
+  border-radius: 5%;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.893);
+}
+.record {
+  position: absolute;
+  left: 20px;
+  top: 35px;
+  width: 200px;
+  height: 200px;
+  background: black;
+  border-radius: 50%;
+}
+.record::before {
+  content: "";
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: repeating-radial-gradient(
+    black,
+    black 5px,
+    #1c1c1c 6px,
+    #1c1c1c 7px
+  );
+  border-radius: 50%;
+}
+.overlay {
+  content: "";
+  left: 20px;
+  top: 35px;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    40%,
+    rgba(255, 255, 255, 0.25),
+    60%,
+    transparent
+  );
+  border-radius: 50%;
+}
+.inner img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+}
+.inner::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 5px;
+  height: 5px;
+  background: black;
+  border-radius: 50%;
+}
+.arm-holder {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #b5b6d2;
+  border-radius: 50%;
+  right: 55px;
+  top: 30px;
+}
+.arm-holder::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  background: #e1e3fe;
+  border-radius: 50%;
+}
+.arm-wrapper {
+  position: absolute;
+  top: 10px;
+  right: 8px;
+  width: 100px;
+  height: 120px;
+  transform-origin: top;
+  transform: rotate(-25deg);
+  transition: 1s;
+}
+.arm {
+  position: absolute;
+  right: 13px;
+  width: 60px;
+  top: 10px;
+  height: 110px;
+  border: 10px solid #ebecff;
+  transform: skew(-20deg, -20deg);
+  transform-origin: top right;
+  border-left-color: transparent;
+  border-top-color: transparent;
+  border-radius: 0 0 30% 0;
+}
+.arm::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 30px;
+  background: #b5b6d2;
+  transform: skew(20deg, 20deg) rotate(75deg);
+  top: 98px;
+  left: -10px;
+  border-radius: 20%;
+  clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+}
+.slider {
+  appearance: none;
+  transform: rotate(-90deg);
+  width: 130px;
+  height: 6px;
+  position: absolute;
+  right: -40px;
+  top: 170px;
+  background-color: #b477d0;
+  border-radius: 8px;
+  border: 6px solid #cd88ec;
+  cursor: pointer;
+}
+::-webkit-slider-thumb {
+  appearance: none;
+  height: 12px;
+  width: 12px;
+  background-color: #ebecff;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.play {
+  transform: rotate(0deg);
+  transform-origin: top;
+  transition: 1s;
+}
+.loading-note {
+  position: relative;
+  top: 40px;
+  left: 260px;
+  text-align: center;
+  color: #f2f3fe;
+  font-size: 20px;
+}
+
+.end-pic img {
+  position: absolute;
+  right: 60px;
+  top: 1200px;
+  max-width: 330px;
+  max-height: 330px;
+  border: solid 15px #ffffff;
+  border-bottom: solid 90px #fffefe;
+  transform: rotate(10deg);
+}
+.end-pic::before,
+.end-pic::after {
+  content: "";
+  position: absolute;
+  height: 50px;
+  width: 180px;
+  background-color: #97fafdb0;
+  transform: rotate(40deg);
+}
+.end-pic::before {
+  top: 1200px;
+  right: -10px;
+  z-index: 2;
+}
+.end-pic::after {
+  top: 1460px;
+  right: 340px;
+  z-index: 2;
+  transform: rotate(30deg);
+}
+
+.know-fox {
+  background-color: #f2f3fe;
+  border-radius: 18px;
+  margin: 0 auto;
+  margin-top: 100px;
+  max-width: 80%;
+  height: fit-content;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  padding: 0;
+  overflow: hidden; 
+}
+.know-fox p {
+  max-width: 70%;
+  padding: 20px;
+  line-height: 25px;
+}
+
+/*Quote Generator styling*/
+button {
+  display: block;
+  margin: 20px auto;
+  background-color: #f2f3fe;
+  color: #e9a4f7;
+  font-size: 15px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  transition: all 200ms ease-in-out;
+  font-family: Helvetica, Arial, sans-serif;
+}
+button:hover {
+  color: #f2f3fe;
+  background-color: #e9a4f7;
+  cursor: pointer;
+}
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f2f3fe;
+  border-radius: 10px;
+  width: 50%;
+  overflow: hidden;
+  padding: 20px;
+}
+.modal-content p {
+  padding: 10px 20px;
+  text-align: center;
+  margin: 0;
+  overflow-y: auto;
+}
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+.quote {
+  color: #06038f;
+  font-style: italic;
+}
+.source {
+  color: #e9a4f7;
+}
+.quote-generator {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #f2f3fe;
+}
+.pg-note {
+  font-size: 20px;
+}
+
+footer {
+  border-radius: 18px;
+  margin: 0;
+  padding: 0;
+  color: #f2f3fe;
+}
+a {
+  color: #db9df7;
+}
+.copyrights {
+  text-align: center;
+  font-size: 20px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.instagram, .tiktok {
+  padding: 25px;
+}
+.my-info {
+  text-align: center;
+}
+
+hr {
+  border-color: #06038f;
+  margin: 50px 120px 20px 120px;
+}
+</style>
   </head>
+
   <body>
     <header>
-      <h1>Life is not a game</h1>
-      <h2>(but I think I'm winning)</h2>
+      <h1 class="national-park-title">Life is not a game
+      </h1>
+      <h2 class="national-park-subtitle">(but I think I'm winning)
+      </h2>
     </header>
-    <div class="intro">
-      <p>
-        Unapologetically queer, this song expresses the love of someone that found themselves after losing themselves so many times. This love is like a precious gem that you want to treasure and keep all to yourself; yet, it is so beautiful and powerful that you also want to shout it to the world. This new version of you is finally ready to be happy.
-        It’s about finding peace after going through a rough time; it’s a warm sunray putting an end to a cold winter; it is love, at last.
-        It’s a piece of pure queer joy.
-      </p>
-
-      <div class="picture">
-        <img src="C:\Users\Noru\Downloads\Untitled design (4).png" alt="" />
+    <div class="intro-container">
+      <div class="intro-wrapper">
+      <div class="intro">
+        <p class="intro-text national-park-main-text">
+          Unapologetically queer, this song expresses the love of someone that found themselves 
+          after losing themselves so many times. 
+          <br>This love is like a precious gem that you want to treasure and keep all to yourself; 
+          <br>yet, it is so beautiful and powerful that you also want to shout it to the world. 
+          <br>This new version of you is finally ready to be happy.
+          It’s about finding peace after going through a rough time; 
+          it’s a warm sunray putting an end to a cold winter; it is love, at last.
+        <br>It’s a piece of pure queer joy.
+        </p>
+      </div>
+      <div class="intro-picture">
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/162/477/original/Untitled_design_%284%29.png?1744026740" 
+        alt="Fox is holding a microphone in a dynamic pose. The picture has purple and black tones." />
+      </div>
       </div>
     </div>
-
-    <div class="polaroid-gallery">
+    
+    <div class="second-part">
+      <div class="polaroid-gallery">
       <div class="stack">
-        <img class="under1" src="imgs/2.jpg" alt="" />
-        <img class="under2" src="imgs/5.jpg" alt="" />
-        <img class="cover" src="imgs/1.jpg" alt="" />
+        <img class="under1" src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/162/471/original/2.jpg?1744026020" 
+        alt="Fox is crossing a road in front of a store named ‘The Fox’. We can see several Fox Gunn posters on the front of the shop." />
+        <img class="under2" src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/162/474/original/5.jpg?1744026218" 
+        alt="Fox is leaning on a railing, looking straight into the camera through her wet hair. She is wearing a grey tank top, a silver watch and silver jewelry. She has tattoos on her arms and right hand." />
+        <img class="cover" src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/162/470/original/1.jpg?1744025831" 
+        alt="Fox is wearing a black jacket, white tee-shirt and dark green beanie with several chains and piercings. She is looking to the left side with a light smile. The picture has purple and blue lights." />
       </div>
 
-      <!-- The Modal/Lightbox -->
       <div id="gallery" class="gallery">
         <span class="close cursor" onclick="closeGalleryModal()">&times;</span>
         <div class="gallery-content">
           <div class="my-slides">
-            <img src="imgs/1.jpg" />
+            <a href="https://www.instagram.com/p/DGygYgtO-hz/?img_index=1" target="_blank">
+              <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/162/470/original/1.jpg?1744025831" 
+              alt="Fox is wearing a black jacket, white tee-shirt and dark green beanie with several chains and piercings. She is looking to the left side with a light smile. The picture has purple and blue lights." />
+            </a>
+            
           </div>
           <div class="my-slides">
-            <img src="imgs/2.jpg" />
+            <a href="https://www.instagram.com/p/C7wyWbQoWf8/?img_index=1" target="_blank">
+              <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/162/471/original/2.jpg?1744026020" 
+              alt="Fox is crossing a road in front of a store named ‘The Fox’. We can see several Fox Gunn posters on the front of the shop."/>
+            </a>
           </div>
           <div class="my-slides">
-            <img src="imgs/3.png" />
+            <a href="https://www.instagram.com/p/C33MuTHrui9/?img_index=3" target="_blank">
+              <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/162/472/original/3.png?1744026137" 
+              alt="The singer is blurred in the background. We can see her hand wearing several rings rested on a microphone pole."/>
+            </a>
           </div>
           <div class="my-slides">
-            <img src="imgs/4.jpg" />
+            <a href="https://www.instagram.com/p/C8M8JNitvyw/?img_index=1" target="_blank">
+              <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/162/473/original/4.jpg?1744026171" 
+              alt="Fox is leaning backward on a bed while her girlfriend films her with a vintage camera. There is a caption saying “I told my therapist about you” at the bottom of the picture." />
+            </a>
+           
           </div>
           <div class="my-slides">
-            <img src="imgs/5.jpg" />
+            <a href="https://www.instagram.com/p/C74JHUhNrBP/?img_index=1" target="_blank">
+              <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/162/474/original/5.jpg?1744026218" 
+              alt="Fox is leaning on a railing, looking straight into the camera through her wet hair. She is wearing a grey tank top, a silver watch and silver jewelry. She has tattoos on her arms and right hand." />
+            </a>
+            
           </div>
           <div class="my-slides">
-            <img src="imgs/6.jpg" />
+            <a href="https://www.instagram.com/p/C5HUve2tJ4E/?img_index=4" target="_blank">
+              <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/162/475/original/6.jpg?1744026241" 
+              alt="Fox has her mouth wide opened and is eating a bagel. She is wearing a black beanie and green velvet jacket with a yellow patch."/>
+            </a>
+            
           </div>
           <div class="my-slides">
-            <img src="imgs/7.png" />
+            <a href="https://www.instagram.com/foxgunnnnn/" target="_blank">
+              <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/162/476/original/7.png?1744026422" 
+              alt="The singer and two musicians are smiling after a concert with the public in the background."/>
+            </a>
+            
           </div>
-          <!-- Next/previous controls -->
-          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+          <a class="prev" onclick="plusSlides(-1)">&#10094;
+          </a>
+          <a class="next" onclick="plusSlides(1)">&#10095;
+          </a>
         </div>
       </div>
-    </div>
-    <div class="record-player">
+
+      <div class="record-player">
+      <p class="caveat-handwritten">Play me!
+      </p>
       <div class="turntable-wrapper">
         <div class="turntable">
           <div class="record">
-            <div class="inner"></div>
+            <div class="inner">
+              <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/162/851/original/linag.jpg?1744373736" 
+              alt="life is not a game cover picture"/>
+            </div>
           </div>
-          <div class="overlay"></div>
+          <div class="overlay">
+          </div>
           <div class="arm-holder">
             <div class="arm-wrapper">
-              <div class="arm"></div>
+              <div class="arm">
+              </div>
             </div>
           </div>
         </div>
@@ -85,49 +690,84 @@
           />
         </div>
       </div>
-      <audio
-        loop
-        class="my-song"
-        src="C:\Users\Noru\Documents\Coding\SheCodes Challenge Most meaningful song\audio test\FOX GUNN - life is not a game (but I think Im winning) [LyricsVisualiser].mp3"
-        preload="auto"
-      ></audio>
+      <div
+        data-video="q0MDVqvlvZA"
+        data-autoplay="0"
+        data-loop="1"
+        id="youtube-player"
+      ></div>
     </div>
+    <p class="loading-note caveat-handwritten">(loading might take up to a few seconds)
+    </p>
+    </div>
+    </div> 
+    
     <div class="about-fox">
       <div class="know-fox">
-      Often described as a chaotic Virgo, Fox Gunn is a London-based independent singer-songwriter who mixes her Catalan heritage in alternative pop melodies. Inspired by rock, electronic, and many other genres, she ditched her classical sheet music to create her own tunes.
-Fox’s tracks tell you stories about queer love, about break-ups and healing. They are packed with vulnerability and rawness but smoothed with deep emotions and realness. Her diary-like, bilingual lyrics let you into her world in an honest and badass way. 
-Whether you listen to her songs while crying your heart out at home or while painting the town red with your best friends, Fox Gunn will charm you with her warm smile and flirty lines. 
-
+      <p class="national-park-main-text">
+        Often described as a chaotic Virgo, Fox Gunn is a London-based independent singer-songwriter 
+        who mixes her Catalan heritage in alternative pop melodies. Inspired by rock, electronic, and many other genres, 
+        she ditched her classical sheet music to create her own tunes.
+        Fox’s tracks tell you stories about queer love, about break-ups and healing. They are packed with vulnerability 
+        and rawness but smoothed with deep emotions and realness. Her diary-like, bilingual lyrics let you into her 
+        world in an honest and badass way. 
+        <br>Whether you listen to her songs while crying your heart out at home or while painting the town red with your 
+        best friends, Fox Gunn will charm you with her warm smile and flirty lines. 
+      </p>
       </div>
-      <div class="picture">
-        <img src="imgs/6.jpg" alt="" />
+      <div class="end-pic">
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/162/582/original/my_muse__I_think_it%E2%80%99s_time_we_call_it_truce%E2%80%A6_-__karu_borge.jpg?1744117217" 
+        alt="Fox is looking straight at the camera through a mirror. There are train tracks in the background." />
     </div>
     <div class="quote-generator">
-      <button class="button">get a quote</button>
+      <span class="national-park-main-text">Want to discover other Fox Gunn songs? Get a quote!
+      </span>
+      <button class="button national-park-main-text">Get a quote!
+      </button>
+      <span class="pg-note caveat-handwritten">I had to leave my faves out, keep it PG and all that 
+        (I shared those with my friends ;) )
+      </span>
 
-    <!-- Pop-up Modal -->
     <div class="modal">
       <div class="modal-content">
-        <span class="close">&times;</span>
-        <p id="modal-text" class="quote"></p>
-        <p id="modal-text-source" class="source"></p>
-        <!-- need to add a classe to target it in css -->
+        <span class="close">&times;
+        </span>
+        <p id="modal-text" class="quote">
+        </p>
+        <p id="modal-text-source" class="source">
+        </p>
       </div>
     </div>
     </div>
+
+    <hr />
+
     <footer>
       <div class="links">
-        <span class="social-links">Follow Fox on<a href="https://www.instagram.com/foxgunnnnn/" target="_blank"> Instagram</a> <br>
-        Learn Catalan with Foxlingo on<a href="https://www.tiktok.com/@foxgunnnnn" target="_blank"> TikTok</span>
+        <span class="instagram national-park-main-text">Follow Fox on
+          <a href="https://www.instagram.com/foxgunnnnn/" target="_blank"> Instagram
+          </a> 
+        </span>
+        <span class="tiktok national-park-main-text">Learn Catalan with Foxlingo on
+        <a href="https://www.tiktok.com/@foxgunnnnn" target="_blank"> TikTok
+        </a>
+        </span>
       </div>
-      <div class="copyrights">
+      <div class="copyrights caveat-handwritten">
         All media, including the pictures and the song, belong to Fox Gunn
       </div>
-      <div class="my-info">
-        This project was coded by Nolwenn <br> Learn more on <a href="https://github.com/Junodity/Song-challenge" target="_blank">Github</a>
+      <div class="my-info national-park-main-text">
+        This project was coded by <a href="https://github.com/Junodity/Song-challenge" target="_blank">Nolwenn
+        </a> as part of the 
+        <a href="https://www.shecodes.io/contests/most-meaningful-song-challenge" target="_blank">Most Meaningful Song Challenge
+        </a> organised by SheCodes in April 2025.
       </div>
     </footer>
   </body>
+
+  <script src="https://www.youtube.com/iframe_api">
+  </script>
+
   <script>
     //Gallery script
     const gallery = document.querySelector(".gallery");
@@ -136,12 +776,10 @@ Whether you listen to her songs while crying your heart out at home or while pai
     let slideIndex = 1;
     showSlides(slideIndex);
 
-    // Next/previous controls
     function plusSlides(n) {
       showSlides((slideIndex += n));
     }
 
-    // Thumbnail image controls
     function currentSlide(n) {
       showSlides((slideIndex = n));
     }
@@ -165,48 +803,65 @@ Whether you listen to her songs while crying your heart out at home or while pai
     stack.addEventListener("click", () => {
       gallery.style.display = "flex";
     });
-    // Close the Modal
+
     function closeGalleryModal() {
       gallery.style.display = "none";
     }
 
+
     //Record player script
     let state = false;
     let turntable = document.querySelector(".turntable");
-    let song = document.querySelector(".my-song");
     let slider = document.querySelector(".slider");
     let record = document.querySelector(".record");
     let arm = document.querySelector(".arm-wrapper");
-
+    let player;
     let rotation = 0;
     let animationFrame;
 
-    // Function to rotate the record smoothly
+    
     function rotateRecord() {
-      rotation += 2.5; // Adjust speed if needed
+      rotation += 2.5;
       record.style.transform = `rotate(${rotation}deg)`;
       animationFrame = requestAnimationFrame(rotateRecord);
+    }// RotateS the record smoothly
+
+    function onYouTubeIframeAPIReady() {
+      const playerContainer = document.getElementById("youtube-player");
+
+      player = new YT.Player("youtube-player", {
+        height: "0",
+        width: "0",
+        videoId: playerContainer.dataset.video,
+        playerVars: {
+  autoplay: 0,
+  loop: 1,
+  modestbranding: 1,
+  rel: 0,
+  playsinline: 1,
+},
+      });
     }
 
     turntable.addEventListener("click", () => {
       if (!state) {
         arm.classList.add("play");
-        setTimeout(() => {
-          song.play();
-          rotateRecord(); // Start rotating the record
-        }, 1000);
+        player.playVideo();
+        rotateRecord();
       } else {
         arm.classList.remove("play");
-        song.pause();
+        player.pauseVideo();
         cancelAnimationFrame(animationFrame); // Stop rotation but keep position
       }
       state = !state;
     });
 
-    // Adjust volume with slider
     slider.addEventListener("input", (e) => {
-      song.volume = Number(e.target.value);
-    });
+  if (player && typeof player.setVolume === "function") {
+    player.setVolume(Number(e.target.value) * 100); // YouTube volume goes from 0 to 100
+  }
+});
+
 
     //quote generator script
     const modal = document.querySelector(".modal");
@@ -216,11 +871,10 @@ Whether you listen to her songs while crying your heart out at home or while pai
         const button = document.querySelector(".button");
         let quotes = [
           "Començo a pensar que m'ha fet un embruix<br><span style='color: gray;'>(I'm starting to think she's cast a spell on me)</span>",
-          `Always at the casino, but the only thing I'm trying to win tonight is <br> you
-      `,
+          `Always at the casino, but the only thing I'm trying to win tonight is <br> you`,
           `She says she wants to learn my language <br>
           Yo te doy una clase privada, mi amor
-          <br> (I'll give you a private lesson, my love)
+          <br> <span style='color: gray;'>(I'll give you a private lesson, my love)</span>
           <br> But I'll be out the door in the morning
           `,
           `Just a bite won't be enough
@@ -241,14 +895,14 @@ Whether you listen to her songs while crying your heart out at home or while pai
         ];
 
         let sources = [
-        "Listen to Crush on <a href= 'https://papago.naver.com/' target='_blank'> Spotify</a>", 
-        "Listen to Use me Properly on <a href= 'https://papago.naver.com/' target='_blank'> Spotify</a>", 
-        "Listen to IDON’TWANTTHISBUTIWANTHER on <a href= 'https://papago.naver.com/' target='_blank'> Spotify</a>",
-        "Listen to Dessert on <a href= 'https://papago.naver.com/' target='_blank'> Spotify</a>", 
-        "Listen to Pottery on <a href= 'https://papago.naver.com/' target='_blank'> Spotify</a>",
-        "Listen to All my lovers hate each other on <a href= 'https://papago.naver.com/' target='_blank'> Spotify</a>", 
-        "Listen to Reckless on <a href= 'https://papago.naver.com/' target='_blank'> Spotify</a>",
-        "Listen to (You make me feel like) A natural woman on <a href= 'https://papago.naver.com/' target='_blank'> Spotify</a>"];
+        "Listen to Crush on <a href='https://open.spotify.com/intl-fr/track/5gPKKLIHcsJ4sxzfgiBlGr?si=add30ce55c4447af' target='_blank'> Spotify</a>", 
+        "Listen to Use me Properly on <a href='https://open.spotify.com/intl-fr/track/4ARvjWJ9UUxEiw3GJYao8D?si=1fe31c43ff1c4850' target='_blank'> Spotify</a>", 
+        "Listen to IDON’TWANTTHISBUTIWANTHER on <a href='https://open.spotify.com/intl-fr/track/0q8x1YAG8t69IshzffO3LB?si=39b3df18ccf3420d' target='_blank'> Spotify</a>",
+        "Listen to Dessert on <a href='https://open.spotify.com/intl-fr/track/1Nfs6XsZ3XdBvFxF7w5UfS?si=4a78217caa5a4ced' target='_blank'> Spotify</a>", 
+        "Listen to Pottery on <a href='https://open.spotify.com/intl-fr/track/6bqXuG2HwpsqOXGPwgAKid?si=bf60328051594c9f' target='_blank'> Spotify</a>",
+        "Listen to All my lovers hate each other on <a href='https://open.spotify.com/intl-fr/track/1SFqJaeW9oxLlNZsnKJmiu?si=0e3427e8b2134d66' target='_blank'> Spotify</a>", 
+        "Listen to Reckless on <a href='https://open.spotify.com/intl-fr/track/0QnKtJW0k4iRXZNWnUlOK5?si=89ddca5cc8354f08' target='_blank'> Spotify</a>",
+        "Listen to (You make me feel like) A natural woman on <a href='https://open.spotify.com/intl-fr/track/4JTO51SYpsAeHYqKAKQcX3?si=555047b550cb493e' target='_blank'> Spotify</a>"];
 
         let seenQuotes = [];
 
@@ -268,7 +922,6 @@ Whether you listen to her songs while crying your heart out at home or while pai
           modal.style.display = "flex";
         });
 
-        // Close modal
         closeQuoteModal.addEventListener("click", () => {
           modal.style.display = "none";
         });

@@ -82,7 +82,7 @@ h2 {
 .intro-picture {
   position: absolute;
   bottom: -288px;
-  right: -25px; /* Adjust this to overlap nicely */
+  right: -18px; /* Adjust this to overlap nicely */
   z-index: 2;
 }
 
