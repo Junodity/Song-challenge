@@ -98,7 +98,7 @@ h2 {
 .second-part {
   border: 3px solid #06038f;
   max-width: 80%;
-  padding-bottom: 140px;
+  padding-bottom: 80px;
   margin: 0 auto;
   margin-top: 40px;
   border-radius: 15px;
@@ -107,7 +107,7 @@ h2 {
 /*Gallery styling*/
 .stack {
   position: relative;
-  top: 60px;
+  top: 80px;
   left: 250px;
   width: 300px;
   height: 300px;
@@ -404,6 +404,18 @@ h2 {
   color: #f2f3fe;
   font-size: 20px;
 }
+.visualiser-link {
+  position: relative;
+  top: 40px;
+  left: 260px;
+  text-align: center;
+}
+.spotify-link {
+  position: relative;
+  top: 40px;
+  left: 260px;
+  text-align: center;
+}
 
 .end-pic img {
   position: absolute;
@@ -440,7 +452,7 @@ h2 {
   background-color: #f2f3fe;
   border-radius: 18px;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 50px;
   max-width: 80%;
   height: fit-content;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
@@ -699,6 +711,9 @@ hr {
     </div>
     <p class="loading-note caveat-handwritten">(loading might take up to a few seconds)
     </p>
+    <a href="https://www.youtube.com/watch?v=q0MDVqvlvZA" target="_blank"></a>
+    <button class="visualiser-link" onclick="OpenYtbLinkInNewTab()">Watch the visualiser on YouTube</button>
+    <button class="spotify-link" onclick="OpenSptfLinkInNewTab()">Listen on Spotify</button>
     </div>
     </div> 
     
@@ -834,12 +849,12 @@ hr {
         width: "0",
         videoId: playerContainer.dataset.video,
         playerVars: {
-  autoplay: 0,
-  loop: 1,
-  modestbranding: 1,
-  rel: 0,
-  playsinline: 1,
-},
+        autoplay: 0,
+        loop: 1,
+        modestbranding: 1,
+        rel: 0,
+        playsinline: 1,
+        },
       });
     }
 
@@ -861,6 +876,12 @@ hr {
     player.setVolume(Number(e.target.value) * 100); // YouTube volume goes from 0 to 100
   }
 });
+  function OpenYtbLinkInNewTab() {
+    window.open("https://www.youtube.com/watch?v=q0MDVqvlvZA", "_blank");
+  }
+  function OpenSptfLinkInNewTab() {
+    window.open("https://open.spotify.com/intl-fr/track/449928gLOyjVFGyhBc20eu?si=57b03b51ee854736", "_blank");
+  }
 
 
     //quote generator script
